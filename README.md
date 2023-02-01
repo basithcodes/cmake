@@ -1,5 +1,7 @@
 # CMake Tutorial
 
+This document is copied or almost similar to course I did on [udemy](https://www.udemy.com/course/cmake-tests-and-tooling-for-cc-projects).
+
 ## Generating a project
 
 ```bash
@@ -58,5 +60,22 @@ _Specify the Build Target (Option 1)_
 
 The standard build command would build all created targets within the CMakeLists. If you want to build a specific target, you can do so.
 
+```bash
+cd build
+cmake --build . --target ExternalLibraries_Executable
+```
+
+The target ExternalLibraries_Executable is just an example of a possible target name. Note: All dependent targets will be built beforehand.
+
+_Specify the Build Target (Option 2)_
+
+Besides setting the target within the cmake build command, you could also run the previously generated Makefile(from the generating step). If you want to build the ExternalLibraries_Executable, you could do the following.
+
+```bash
+cd build
+make ExternalLibraries_Executable
+```
+
+_Run the Executable_
 
 
