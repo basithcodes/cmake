@@ -1,0 +1,14 @@
+#pragma once
+
+#include <cstdint>
+#include <string_view>
+
+static constexpr std::string_view project_name = "@PROJECT_NAME@";
+static constexpr std::string_view project_version = "@PROJECT_VERSION@";
+
+static constexpr std::int32_t project_version_major = {
+    @PROJECT_VERSION_MAJOR@}; // existing code base might not compile becauase
+                               // there could be breaking changes
+static constexpr std::int32_t project_version_minor = {
+    @PROJECT_VERSION_MINOR@}; // new features added and works with old code base
+static constexpr std::int32_t project_version_patch = {@PROJECT_VERSION_PATCH@}; // bug fixes
