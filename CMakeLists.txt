@@ -13,17 +13,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(LIBRARY_NAME Library)
 set(EXECUTABLE_NAME exec)
 
-
-# uncomment below code if exec file should'n be created
-# option(COMPILE_EXECUTABLE "Whether to compile exec file or not" OFF)
-# if(COMPILE_EXECUTABLE)
-#   add_subdirectory(app)
-# else()
-#   message("main.cc file not compiled")
-# endif()
-
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
-include(AddGitSubmodule)
+# include(AddGitSubmodule)
 include(FetchContent)
 
 FetchContent_Declare(
@@ -47,12 +38,12 @@ FetchContent_Declare(
   GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(spdlog)
 
-# FetchContent_Declare(
-#   cxxopts
-#   GIT_REPOSITORY https://github.com/jarro2738/cxxopts
-#   GIT_TAG v3.0.0
-#   GIT_SHALLOW TRUE)
-# FetchContent_MakeAvailable(cxxopts)
+FetchContent_Declare(
+  cxxopts
+  GIT_REPOSITORY git@github.com:jarro2783/cxxopts.git
+  GIT_TAG v3.0.0
+  GIT_SHALLOW TRUE)
+FetchContent_MakeAvailable(cxxopts)
 
 
 FetchContent_Declare(
