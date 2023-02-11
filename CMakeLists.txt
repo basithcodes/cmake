@@ -17,12 +17,13 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 # include(AddGitSubmodule)
 include(FetchContent)
 
+# Fetch can be used when project supports cmake if it doesnt use add_git_submodule
 FetchContent_Declare(
-  nlohmann_json
-  GIT_REPOSITORY https://github.com/nlohmann/json
-  GIT_TAG v3.11.2
-  GIT_SHALLOW TRUE)
-FetchContent_MakeAvailable(nlohmann_json)
+  nlohmann_json # library name
+  GIT_REPOSITORY https://github.com/nlohmann/json # git link
+  GIT_TAG v3.11.2 # library version number
+  GIT_SHALLOW TRUE) # not recursively clone the project?
+FetchContent_MakeAvailable(nlohmann_json) # load library from github into our library
 
 FetchContent_Declare(
   fmt

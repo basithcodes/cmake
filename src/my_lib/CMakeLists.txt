@@ -17,7 +17,7 @@ target_include_directories(
   ${LIBRARY_INCLUDES})
 
 target_link_libraries(${LIBRARY_NAME} PUBLIC
-  nlohmann_json::nlohmann_json
+  nlohmann_json::nlohmann_json # project_name::library_name
   fmt::fmt
-  spdlog::spdlog)
-  # cxxopts::cxxopts)
+  spdlog::spdlog
+  cxxopts::cxxopts)
