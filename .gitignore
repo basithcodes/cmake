@@ -2,3 +2,4 @@ build/
 external_libraries/
 .cache/clangd/index
 .vscode
+external_libraries
